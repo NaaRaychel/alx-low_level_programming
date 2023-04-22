@@ -1,18 +1,18 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
 /**
- * main - determines if the number is positive,negative or zero
- * Return: Always 0 (Success)
+ * main - Entry point
+ * Description: 'Check if a number is positive or negative'
+ * Return: Always 0
  */
 int main(void)
 {
 	int n;
 
-	strand(time(0));
+	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
 	if (n > 0)
 	{
 		printf("%d is positive\n", n);
@@ -25,6 +25,5 @@ int main(void)
 	{
 		printf("%d is negative\n", n);
 	}
-
 	return (0);
 }

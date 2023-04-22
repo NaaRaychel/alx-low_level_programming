@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 
 /**
@@ -9,27 +7,31 @@
 
 int main(void)
 {
-	int p, q;
+	int i = '0';
+	int j = '0';
 
-	for (p = 0; p <= 98; p++)
+	while (i <= '9')
 	{
-		putchar((p / 10) + '0');
-		putchar((p % 10) + '0');
-		putchar(' ');
+		while (j <= '9')
+		{
+			if (!(i > j) || i == j)
+			{
+				putchar(i);
+				putchar(j);
+				if (i == '8' && j == '9')
+				{
+					putchar('\n');
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+j++;
+		}
 	}
-
-	for (q = p + 1; q <= 99; q++)
-	{
-		putchar((q / 10) + '0');
-		putchar((q % 10) + '0');
-	}
-
-	if (p == 98 && q == 99)	continue;
-	{
-		putchar(',');
-		putchar(' ');
-	}
-
-	putchar('\n');
-	return (0);
+j = '0';
+i++;
+return (0);
 }
